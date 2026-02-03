@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "deploy": "vite build && echo 'Built successfully! Commit and push to deploy to GitHub Pages.'"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

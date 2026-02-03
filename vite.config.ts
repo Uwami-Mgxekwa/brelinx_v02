@@ -20,10 +20,11 @@ export default defineConfig({
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
   
-  // GitHub Pages configuration
+  // GitHub Pages configuration - build to root
   base: './',
   build: {
-    outDir: 'dist',
+    outDir: '.',
     assetsDir: 'assets',
+    emptyOutDir: false, // Don't empty the root directory
   },
 })
