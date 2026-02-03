@@ -26,5 +26,40 @@ export default defineConfig({
     outDir: '.',
     assetsDir: 'assets',
     emptyOutDir: false, // Don't empty the root directory
+    // Performance optimizations
+    minify: 'esbuild', // Use esbuild instead of terser for faster builds
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor';
+            }
+            if (id.includes('motion')) {
+              return 'motion';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            return 'vendor';
+          }
+        },
+      },
+    },
+    // Enable gzip compression
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000,
+  },
+  
+  // Performance optimizations for development
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
+  
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'motion/react', 'lucide-react'],
   },
 })
