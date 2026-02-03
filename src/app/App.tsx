@@ -1,8 +1,7 @@
-import React from 'react';
 import { motion as Motion } from 'motion/react';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { ArrowRight, Code, Cpu, Database, ChevronRight, Globe, Github, Twitter, Linkedin, Mail } from 'lucide-react';
-import logo from 'figma:asset/2c091447010877f07d62ec58f88c374cadf7cd01.png';
+import logo from '@/assets/brelinx-logo.svg';
 
 // Components
 const Navbar = () => {
