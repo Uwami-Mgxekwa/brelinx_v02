@@ -36,9 +36,8 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('contact')} className="hover:text-[#005a4e] transition-colors">Contact</button>
           <button 
             onClick={handleContactClick}
-            className="bg-[#005a4e] text-white px-6 py-2 rounded-full hover:bg-[#004a42] transition-all transform hover:scale-105 flex items-center gap-2"
+            className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all transform hover:scale-105"
           >
-            <MessageCircle className="w-4 h-4" />
             Get Started
           </button>
         </div>
@@ -66,9 +65,8 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left py-2 hover:text-[#005a4e] transition-colors">Contact</button>
               <button 
                 onClick={handleContactClick}
-                className="w-full bg-[#005a4e] text-white px-6 py-3 rounded-full hover:bg-[#004a42] transition-all flex items-center justify-center gap-2"
+                className="w-full bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all"
               >
-                <MessageCircle className="w-4 h-4" />
                 Get Started
               </button>
             </div>
@@ -108,30 +106,30 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#005a4e] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#005a4e]"></span>
             </span>
-            Leading Technology Solutions Provider
+            Engineering the Future
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-            Transform Your <br />
-            <span className="text-[#005a4e] bg-gradient-to-r from-[#005a4e] to-[#007a66] bg-clip-text text-transparent">Business</span> <br />
-            with Technology.
+            Next-Gen <br />
+            <span className="text-[#005a4e] bg-gradient-to-r from-[#005a4e] to-[#007a66] bg-clip-text text-transparent">Tech Solutions</span> <br />
+            for Enterprise.
           </h1>
           <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
-            Brelinx delivers cutting-edge software development, intelligent automation, 
-            cloud solutions, and data engineering services. We transform complex business 
-            challenges into seamless digital experiences that drive growth.
+            Brelinx empowers businesses with cutting-edge software 
+            development, intelligent automation, and robust data 
+            engineering. We turn complex challenges into seamless 
+            digital experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <button 
               onClick={handleContactClick}
-              className="bg-[#005a4e] text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#004a42] transition-all group transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-black text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all group transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              <MessageCircle className="w-5 h-5" />
               Start Your Project
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
               onClick={scrollToPortfolio}
-              className="border-2 border-[#005a4e] text-[#005a4e] px-8 py-4 rounded-xl font-bold hover:bg-[#005a4e] hover:text-white transition-all transform hover:scale-105"
+              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-bold hover:border-gray-400 hover:text-gray-900 transition-all transform hover:scale-105"
             >
               View Our Work
             </button>
@@ -160,20 +158,61 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-3xl overflow-hidden border border-gray-100 shadow-2xl">
-            <ImageWithFallback 
-              src="https://images.unsplash.com/photo-1739343338040-2dae68f6bdf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx8fDE3NzAwNjA3NTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Advanced technology solutions and software development services by Brelinx"
-              className="w-full aspect-[4/3] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#005a4e]/60 to-transparent flex items-end p-8">
-              <div className="text-white">
-                <p className="text-3xl font-bold mb-1">99.9%</p>
-                <p className="text-sm opacity-90 uppercase tracking-widest">Uptime Delivery</p>
+          {/* Large Black Card - Main Feature */}
+          <div className="relative bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+            
+            {/* Tech Pattern Overlay */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-white/20 rounded-full"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/20 rounded-full"></div>
+              <div className="absolute top-1/2 right-1/3 w-16 h-16 border border-white/20 rounded-full"></div>
+            </div>
+            
+            {/* Main Content */}
+            <div className="relative z-10 h-full flex flex-col justify-between p-8">
+              <div className="flex justify-between items-start">
+                <div className="text-white/60 text-sm">
+                  <Monitor className="w-6 h-6 mb-2" />
+                  <p className="uppercase tracking-widest">System Status</p>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <div className="text-white mb-4">
+                  <p className="text-6xl font-bold mb-2">99.9%</p>
+                  <p className="text-sm opacity-80 uppercase tracking-widest">UPTIME DELIVERY</p>
+                </div>
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-white">200+</p>
+                    <p className="text-xs text-white/60">Projects</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-white">15+</p>
+                    <p className="text-xs text-white/60">Engineers</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-white">24/7</p>
+                    <p className="text-xs text-white/60">Support</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-end">
+                <div className="text-white/60 text-xs">
+                  <p>Last updated: Real-time</p>
+                </div>
+                <div className="flex gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                </div>
               </div>
             </div>
           </div>
-          {/* Floating cards */}
+          
+          {/* Floating Automation Card */}
           <Motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -183,9 +222,9 @@ const Hero = () => {
               <div className="bg-[#005a4e]/10 p-2 rounded-lg text-[#005a4e]">
                 <Zap className="w-5 h-5" />
               </div>
-              <span className="text-xs font-bold">AI Automation</span>
+              <span className="text-xs font-bold">Automation</span>
             </div>
-            <p className="text-[10px] text-gray-500">Implementing intelligent workflows for 50% efficiency gains.</p>
+            <p className="text-[10px] text-gray-500">Integrating AI-driven workflows for 50% efficiency gains.</p>
           </Motion.div>
         </Motion.div>
       </div>
@@ -205,15 +244,16 @@ const About = () => {
           <div>
             <h2 className="text-4xl font-bold mb-6">About Brelinx</h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Founded at the intersection of innovation and execution, Brelinx is South Africa's premier technology consultancy. 
-              We specialize in transforming businesses through cutting-edge software development, intelligent automation, 
-              and comprehensive digital solutions that drive measurable results.
+              Founded at the intersection of innovation and execution, Brelinx is more than 
+              just a tech consultancy. We are your strategic partners in digital 
+              transformation, dedicated to building software that doesn't just work, but 
+              excels.
             </p>
             <div className="space-y-4 mb-8">
               {[
-                { title: 'Innovation First', desc: 'Leveraging the latest technologies including AI, cloud computing, and automation.' },
-                { title: 'Global Standards', desc: 'Delivering enterprise-grade solutions that meet international quality benchmarks.' },
-                { title: 'Client Success', desc: 'Your business goals drive our technical expertise and solution architecture.' }
+                { title: 'Innovation First', desc: 'Staying ahead of the curve with emerging technologies.' },
+                { title: 'Global Standards', desc: 'Delivering quality that meets international benchmarks.' },
+                { title: 'Client Centric', desc: 'Your vision, amplified by our technical expertise.' }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#005a4e] flex items-center justify-center text-white">
@@ -231,24 +271,24 @@ const About = () => {
               className="bg-[#005a4e] text-white px-8 py-3 rounded-xl font-bold hover:bg-[#004a42] transition-all transform hover:scale-105 flex items-center gap-2"
             >
               <MessageCircle className="w-5 h-5" />
-              Contact us today for cutting-edge tech solutions
+              Learn More About Our Services
             </button>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-8">
               <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
-                <h3 className="text-4xl font-bold text-[#005a4e] mb-2">200+</h3>
+                <h3 className="text-4xl font-bold text-[#005a4e] mb-2">120+</h3>
                 <p className="text-xs text-gray-500 uppercase font-semibold">Projects Completed</p>
               </div>
-              <div className="bg-[#005a4e] p-8 rounded-3xl text-white text-center">
-                <h3 className="text-4xl font-bold mb-2">15+</h3>
-                <p className="text-xs opacity-80 uppercase font-semibold">Expert Engineers</p>
+              <div className="bg-[#005a4e] p-8 rounded-3xl text-white text-center shadow-xl">
+                <h3 className="text-4xl font-bold mb-2">50%</h3>
+                <p className="text-xs opacity-80 uppercase font-semibold">Faster Deployment</p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="bg-gradient-to-br from-[#005a4e] to-[#007a66] p-8 rounded-3xl text-white text-center">
-                <h3 className="text-4xl font-bold mb-2">60%</h3>
-                <p className="text-xs opacity-80 uppercase font-semibold">Faster Deployment</p>
+              <div className="bg-black p-8 rounded-3xl text-white text-center shadow-xl">
+                <h3 className="text-4xl font-bold mb-2">15+</h3>
+                <p className="text-xs opacity-80 uppercase font-semibold">Expert Engineers</p>
               </div>
               <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm text-center">
                 <h3 className="text-4xl font-bold text-[#005a4e] mb-2">4.9/5</h3>
@@ -341,8 +381,8 @@ const Services = () => {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Our Technology Services</h2>
-          <p className="text-gray-500 max-w-3xl mx-auto">We provide a comprehensive suite of technology services designed to transform your business and drive digital innovation across all industries.</p>
+          <h2 className="text-4xl font-bold mb-4">Core Offerings</h2>
+          <p className="text-gray-500 max-w-3xl mx-auto">We provide a comprehensive suite of technical services designed to scale with your business needs.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
@@ -382,9 +422,8 @@ const Services = () => {
         <div className="text-center mt-16">
           <button 
             onClick={() => window.open('https://wa.me/27785002274?text=Hello%20Brelinx!%20I%27d%20like%20to%20discuss%20my%20technology%20needs.', '_blank')}
-            className="bg-[#005a4e] text-white px-10 py-4 rounded-xl font-bold hover:bg-[#004a42] transition-all transform hover:scale-105 flex items-center gap-3 mx-auto shadow-lg hover:shadow-xl"
+            className="bg-black text-white px-10 py-4 rounded-xl font-bold hover:bg-gray-800 transition-all transform hover:scale-105 flex items-center gap-3 mx-auto shadow-lg hover:shadow-xl"
           >
-            <MessageCircle className="w-6 h-6" />
             Contact us today for cutting-edge tech solutions
             <ArrowRight className="w-5 h-5" />
           </button>
@@ -440,12 +479,12 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-br from-gray-900 via-[#005a4e] to-gray-900 text-white overflow-hidden">
+    <section id="portfolio" className="py-24 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <h2 className="text-4xl font-bold mb-4">Our Success Stories</h2>
-            <p className="text-gray-300 max-w-xl">Discover how we've helped businesses across industries achieve their digital transformation goals with innovative technology solutions.</p>
+            <h2 className="text-4xl font-bold mb-4">Our Portfolio</h2>
+            <p className="text-gray-300 max-w-xl">A selection of recent projects where we've helped our clients achieve their technical goals.</p>
           </div>
           <button 
             onClick={() => window.open('https://wa.me/27785002274?text=Hello%20Brelinx!%20I%27d%20like%20to%20see%20more%20of%20your%20portfolio%20and%20discuss%20my%20project.', '_blank')}
@@ -579,23 +618,23 @@ Message: ${formData.message}`;
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#005a4e] to-[#007a66] p-8 rounded-3xl text-white">
+            <div className="bg-gradient-to-br from-black via-gray-900 to-black p-8 rounded-3xl text-white shadow-xl">
               <h4 className="text-xl font-bold mb-4">Why Choose Brelinx?</h4>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 flex-shrink-0" />
+                  <ChevronRight className="w-4 h-4 flex-shrink-0 text-green-400" />
                   <span>Expert team with 15+ years of experience</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 flex-shrink-0" />
+                  <ChevronRight className="w-4 h-4 flex-shrink-0 text-green-400" />
                   <span>200+ successful projects delivered</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 flex-shrink-0" />
+                  <ChevronRight className="w-4 h-4 flex-shrink-0 text-green-400" />
                   <span>24/7 support and maintenance</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <ChevronRight className="w-4 h-4 flex-shrink-0" />
+                  <ChevronRight className="w-4 h-4 flex-shrink-0 text-green-400" />
                   <span>Cutting-edge technology solutions</span>
                 </li>
               </ul>
@@ -733,8 +772,8 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+          <div>
             <img src={logo} alt="Brelinx - Leading Technology Solutions Provider" className="h-8 w-auto mb-8 filter brightness-0 invert" />
             <p className="text-gray-400 max-w-md mb-8 text-sm leading-relaxed">
               Brelinx is South Africa's premier technology consultancy, specializing in cutting-edge software development, 

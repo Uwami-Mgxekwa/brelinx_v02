@@ -20,12 +20,12 @@ export default defineConfig({
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
   
-  // GitHub Pages configuration - build to root
+  // GitHub Pages configuration
   base: './',
   build: {
-    outDir: '.',
+    outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: false, // Don't empty the root directory
+    emptyOutDir: true, // Clean dist directory on build
     // Performance optimizations
     minify: 'esbuild', // Use esbuild instead of terser for faster builds
     rollupOptions: {
